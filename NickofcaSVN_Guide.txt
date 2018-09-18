@@ -1,0 +1,47 @@
+~~Quick Summary of SVN Commands~~
+~Discover~
+Viewing general structure (while on vision):
+	svn list file:///path/to/dir
+example:
+	svn list file:///home/svn/projects (views projects)
+Viewing via ssh:
+	svn list svn+ssh://vision.cs.arizona.edu/home/svn/src
+
+~Checkout~
+To check out "trunk" (base code) material:
+	svn co svn+ssh://vision.cs.arizona.edu/home/svn/src/Make/trunk Make
+??Find clarifcation on last keyword ("Make" in the example")
+!!Answer: This titles the directory differently within the local repository
+
+~Update~
+Update the local files with the remote repository:
+	svn update
+	(Perform on local machine within an svn directory)
+
+~Commiting~
+Always update before commiting to deal with merge conflicts effectively.
+How to perform a commit:
+	svn commit
+	(In commiting directory)
+
+~Add/Remove~
+Add new file:
+	svn add <filename>
+Stop tracking and remove file:
+	svn rm <filename>
+
+~Solving Conflicts~
+File will have labels for different conflicting sections and a partition.
+Resolve conflict and then submit resolution using:
+	svn resolve
+	#following arguments can be included
+		--accept mine_full filename
+		--accept theirs_full filename
+		--accept working filename
+		#update with your current working copy (local)
+		--accept base
+(See dinosaur page within IVI manifesto for more details)
+
+~More~
+For more information visit the following URL:
+	http://svnbook.red-bean.com/en/1.6/svn.ref.svn.c.resolve.html
